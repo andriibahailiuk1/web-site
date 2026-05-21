@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Електронний журнал успішності</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Електронний журнал успішності</h1>
+        <div id="datetime-display" class="datetime"></div>
+        
+        <nav>
+            <button class="nav-btn" data-target="home-section">Головна</button>
+            <button class="nav-btn" data-target="journal-section">Журнал</button>
+            <button class="nav-btn" data-target="about-section">Про додаток</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+    <h3>Форма оновлення контактних даних</h3>
+    <form id="contact-form">
+        <input type="text" id="user-name" placeholder="Ім'я студента">
+        <input type="text" id="user-phone" placeholder="Телефон (наприклад: 099-123-4567)">
+        <button type="submit" class="submit-btn">Відправити</button>
+        <p id="form-error" class="error-message"></p>
+    </form>
+</div>
+
+<div id="student-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div id="modal-details">
+            </div>
+    </div>
+</div>
+        <section id="home-section" class="page-section active">
+            <h2>Головна сторінка</h2>
+            <p>Ласкаво просимо до системи контролю успішності студентів.</p>
+        </section>
+
+       <section id="journal-section" class="page-section">
+    <h2>Журнал успішності студентів</h2>
+    
+    <div class="search-container">
+        <input type="text" id="student-search" placeholder="Пошук студента за прізвищем...">
+    </div>
+    <div id="statistics-panel" class="stats-panel">
+    <h3>Статистика журналу</h3>
+    <p>Середній бал групи: <strong id="average-grade">0</strong></p>
+    <p>Кількість відмінників (бал >= 90): <strong id="top-students-count">0</strong></p>
+</div>
+
+    <div id="students-container" class="students-grid">
+        </div>
+</section>
+
+        <section id="about-section" class="page-section">
+            <h2>Про систему</h2>
+            <p>Цей додаток розроблено в рамках курсової роботи.</p>
+            <h3>Інформація про вашу систему:</h3>
+            <div id="browser-info" class="system-info"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Електронний журнал успішності.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

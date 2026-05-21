@@ -1,0 +1,226 @@
+/* Базові налаштування та Flexbox-каркас */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.datetime {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    margin-top: 5px;
+}
+
+nav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-btn {
+    padding: 8px 16px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #3498db;
+}
+
+main {
+    flex: 1; /* Розтягує main, притискаючи футер донизу */
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- SPA Логіка --- */
+.page-section {
+    display: none; /* Приховуємо всі секції за замовчуванням */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.page-section.active {
+    display: block; /* Показуємо тільки активну секцію */
+}
+
+.system-info {
+    background: #ecf0f1;
+    padding: 10px;
+    border-left: 4px solid #3498db;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+.search-container {
+    margin-bottom: 20px;
+}
+
+#student-search {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.student-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.student-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.grade-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #3498db;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* --- Форма --- */
+.form-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#contact-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* --- Кнопки карток (для делегування) --- */
+.card-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.fav-btn { background-color: #f1c40f; color: #333; }
+.details-btn { background-color: #34495e; color: white; }
+.favorited { border: 2px solid #f1c40f; background-color: #fffde7; } /* Стан "Вибране" */
+
+/* --- Модальне вікно --- */
+.modal {
+    display: none; /* Приховано за замовчуванням */
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover { color: black; }
+/* --- Статистика --- */
+.stats-panel {
+    background-color: #e8f8f5;
+    padding: 15px;
+    border-left: 4px solid #1abc9c;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.stats-panel h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
